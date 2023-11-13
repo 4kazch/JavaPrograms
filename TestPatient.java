@@ -1,59 +1,52 @@
 import java.util.*;
 
-class Patient
-{
-	int ID;
+class Patient{
+	int id;
 	int age;
-	String bloodData;
+	int data;
 	
-	public Patient()
-	{
-		ID = 0;
-		age = 0;
-		bloodData = "NULL";
+	Patient(){
+		id =0;
+		age =0;
+		data = 0;
+	}
+	Patient(int id,int age, int data){
+		this.id = id;
+		this.age=age;
+		this.data = data;
 	}
 	
-	public Patient(int ID, int age, String bloodData)
-	{
-		this.ID = ID;
-		this.age = age;
-		this.bloodData = bloodData;
-	} 
-	
-	public void getID()
-	{
-		System.out.println( "ID : " + ID);
+	int getId(){
+		return id;
+	}
+	int getAge(){
+		return age;
+	}
+	int getData(){
+		return data;
 	}
 	
-	public void getAge()
-	{
-		System.out.println( "Age : " + age);
-	}
-	
-	public void getBloodData()
-	{
-		System.out.println( "Blood Data : " + bloodData);
-	}
 }
 
-
-public class TestPatient
-{
-	public static void main(String args[])
-	{
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter ID : ");
-		int ID = input.nextInt();
-		System.out.println("Enter Age : ");
-		int age = input.nextInt();
-		System.out.println("Enter Blood Data : ");
-		String bloodData = input.next();
-		Patient P1 = new Patient(ID, age, bloodData);
-		P1.getID();
-		P1.getAge();
-		P1.getBloodData();
-	
+public class TestPatient{
+	public static void main(String args[]){
+		System.out.println("enter id: ");
+		Scanner sc =  new Scanner(System.in);
+		int id = sc.nextInt();
+		
+		System.out.println("enter age: ");
+		int age = sc.nextInt();
+		
+		System.out.println("enter Blood data: ");
+		int data = sc.nextInt();
+		
+		Patient p1 = new Patient(id,age,data);
+		
+		System.out.println("id: "+ p1.getId());
+		System.out.println("age: "+ p1.getAge());
+		System.out.println("data: "+ p1.getData());
+		
 		
 	}
-}
 
+}
